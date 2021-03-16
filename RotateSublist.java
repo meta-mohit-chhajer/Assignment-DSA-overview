@@ -16,7 +16,7 @@ public class RotateSublist {
 	 * @return true if loop present else false
 	 */
 	public static boolean detectLoop(){
-		ListNode head=null;
+		
 		List<ListNode> lm=new ArrayList<>();
 		while(head!=null){
 			if(lm.contains(head))
