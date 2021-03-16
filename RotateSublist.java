@@ -15,7 +15,7 @@ public class RotateSublist {
 	 * Used to check, if there is any loop inside linked list
 	 * @return true if loop present else false
 	 */
-	public static boolean detectLoop(){
+	public static boolean detectLoop(ListNode head){
 		
 		List<ListNode> lm=new ArrayList<>();
 		while(head!=null){
@@ -120,6 +120,6 @@ public class RotateSublist {
 		System.out.println();
 		int l=2,r=5,k=2;
 		rotate(head, l, r, k);
-		System.out.println("List Inside List "+detectLoop());
+		System.out.println("List Inside List "+detectLoop(head));
 	}
 }
