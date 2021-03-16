@@ -3,8 +3,36 @@ public class RotateSublist {
 	 public static class ListNode{
 		int data;
 		ListNode next;
+		public ListNode(){}
+		public ListNode(int data)
+		{
+			this.data=data;
+			this.next=null;
+		}
 	}
 	
+	/*
+	 * Used to check, if there is any loop inside linked list
+	 * @return true if loop present else false
+	 */
+	public static boolean detectLoop(){
+		ListNode head=null;
+		List<ListNode> lm=new ArrayList<>();
+		while(head!=null){
+			if(lm.contains(head))
+				return true;
+			lm.add(head);
+			head=head.next;
+	 }
+	return false;
+}
+	
+	/*
+	* Funtion to perform Rotation of Sublist
+	* @param l: left index from where sublist should be started
+	* @param r: right index to the end of sublist
+	* @param k as how many places a node to be shifted
+	*/
 	public static void rotate(ListNode A,int l,int r,int k){
 		int size=r-l+1;
 		if(k>size){
@@ -61,6 +89,10 @@ public class RotateSublist {
 		}
 	}
 	
+	/*
+	 * Funtion to Push Elements in LinkedList
+	 * @param val :value to be entered
+	 */
 	public static ListNode push(ListNode head,int val)
 	{
 		ListNode new_node=new ListNode();
@@ -88,5 +120,6 @@ public class RotateSublist {
 		System.out.println();
 		int l=2,r=5,k=2;
 		rotate(head, l, r, k);
+		System.out.println("List Inside List "+detectLoop());
 	}
 }
